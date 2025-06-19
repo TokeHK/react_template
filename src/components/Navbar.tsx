@@ -15,9 +15,12 @@ export default function Navbar() {
   );
 
   return (
+    /* Skal også lave link i App.tsx */
     <nav className="bg-white shadow p-4 flex gap-4">
       {navLink('/', 'Home')}
       {navLink('/about', 'About')}
+      {navLink('/hooks', 'Hooks')}
+      {navLink('/form', 'Form')}
     </nav>
   );
 }
