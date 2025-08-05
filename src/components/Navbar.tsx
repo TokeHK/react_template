@@ -7,7 +7,7 @@ export default function Navbar() {
     <Link
       to={to}
       className={`px-3 py-2 rounded hover:bg-blue-100 transition ${
-        pathname === to ? 'text-blue-600 font-semibold' : 'text-gray-700'
+        pathname === to ? 'text-blue-600 font-semibold border-2' : 'text-gray-700'
       }`}
     >
       {label}

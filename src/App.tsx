@@ -12,12 +12,13 @@ import { AuthProvider } from './admin/AuthContext';
 import ProtectedRoute from './admin/ProtectedRoute';
 import AdminDashboard from './admin/AdminDashboard';
 import AdminLayout from './admin/AdminLayout';
+import AdminPage from './admin/AdminPage';
 
 export default function App() {
   return (
     <AuthProvider>
       <Routes>
-        {/* skal også lave link i Navbar.tsx */}
+        {/* husk at lave links i components/Navbar.tsx */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -33,6 +34,7 @@ export default function App() {
         {/* admin route start */}
         <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
           <Route path="admindashboard" element={<AdminDashboard />} />
+          <Route path="adminpage" element={<AdminPage />} />
         </Route>
         {/* admin route end */}
       </Routes>

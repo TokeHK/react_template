@@ -1,10 +1,10 @@
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import AdminNavbar from './AdminNavbar';
 
 const AdminLayout = () => {
   return (
     <div>
-      <h1>Admin navbar component</h1>
-      <Link to={"/"}>Leave Admin</Link>
+      <AdminNavbar />
       <Outlet />
     </div>
   );

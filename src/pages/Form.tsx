@@ -16,7 +16,7 @@ type FormData = {
   terms?: boolean;
 };
 
-export default function Home() {
+export default function Form() {
 
   const schema = yup.object().shape({
     name: yup
