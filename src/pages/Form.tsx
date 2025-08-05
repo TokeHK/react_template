@@ -66,7 +66,8 @@ export default function Home() {
           <TextFields
             label="Age"
             type="number"
-            {...register("age")}
+            min={1}
+            {...register("age", { min: 1 })}
           />
           <span className="text-gray-400 text-s">
             {errors.age?.message}
