@@ -21,6 +21,7 @@ export default function Navbar() {
       {navLink('/about', 'About')}
       {navLink('/hooks', 'Hooks')}
       {navLink('/form', 'Form')}
+      {navLink('/login', 'Login')}
     </nav>
   );
 }
