@@ -1,6 +1,6 @@
 import React, { type FormEvent } from 'react';
 import { useAuth } from '../admin/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { useState } from "react";
 
 const Login: React.FC = () => {
@@ -12,7 +12,7 @@ const Login: React.FC = () => {
   const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    /* lav admincheck med server / API */
+    /* lav admincheck med API */
     const isAdmin = email === "testing@gmail.com";
 
     login({ email: 'testing@gmail.com', password:"12345", isAdmin });
@@ -22,9 +22,8 @@ const Login: React.FC = () => {
   return (
     <form
       onSubmit={handleLogin}
-      className="max-w-md mx-auto mt-20 bg-white shadow-lg rounded-lg p-8 space-y-6"
+      className="max-w-md mx-auto mt-20 bg-white shadow-2xl rounded-lg p-8 space-y-6"
     >
-      <h2 className="text-2xl font-semibold text-center text-gray-800">Admin Login</h2>
       <p>testing@gmail.com</p>
       <p>12345</p>
 
@@ -35,7 +34,8 @@ const Login: React.FC = () => {
         <input
           id="email"
           type="email"
-          placeholder="Enter your email"
+          placeholder="email"
+          autoComplete='true'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -50,7 +50,7 @@ const Login: React.FC = () => {
         <input
           id="password"
           type="password"
-          placeholder="Enter your password"
+          placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
@@ -60,7 +60,7 @@ const Login: React.FC = () => {
 
       <button
         type="submit"
-        className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200"
+        className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200"
       >
         Login
       </button>

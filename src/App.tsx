@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router';
 import Home from './pages/Home';
 import About from './pages/About';
 import Hooks from './pages/Hooks';
@@ -16,28 +16,29 @@ import AdminPage from './admin/AdminPage';
 
 export default function App() {
   return (
-    <AuthProvider>
-      <Routes>
-        {/* husk at lave links i components/Navbar.tsx */}
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/hooks" element={<Hooks />} />
-          <Route path="/form" element={<Form />} />
-          <Route path="/login" element={<Login />} />
-          
-          <Route path="/unauthorized" element={<Unauthorized />} />
-          <Route path='*' element={<NotFound />} />
-        </Route>
-        {/* regular route end */}
-
-        {/* admin route start */}
-        <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
-          <Route path="admindashboard" element={<AdminDashboard />} />
-          <Route path="adminpage" element={<AdminPage />} />
-        </Route>
-        {/* admin route end */}
-      </Routes>
-    </AuthProvider>
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          {/* husk at lave links i components/Navbar.tsx */}
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/hooks" element={<Hooks />} />
+            <Route path="/form" element={<Form />} />
+            <Route path="/login" element={<Login />} />
+      
+            <Route path="/unauthorized" element={<Unauthorized />} />
+            <Route path='*' element={<NotFound />} />
+          </Route>
+          {/* regular route end */}
+          {/* admin route start */}
+          <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
+            <Route path="admindashboard" element={<AdminDashboard />} />
+            <Route path="adminpage" element={<AdminPage />} />
+          </Route>
+          {/* admin route end */}
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
