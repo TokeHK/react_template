@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import TextFields from "../components/formComponents/TextFields";
 import Button from "../components/formComponents/Button";
-import Checkbox from "../components/formComponents/CheckBox";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -13,7 +12,6 @@ type FormData = {
   name: string;
   age: number;
   email: string;
-  terms?: boolean;
 };
 
 export default function Form() {
@@ -34,10 +32,7 @@ export default function Form() {
       .string()
       .email("Must be a proper email")
       .required("Email is required"),
-    terms: yup
-      .bool()
-      .oneOf([true], 'Must accept terms and services to use our services')
-  })
+    })
 
   const {
     register,
@@ -80,14 +75,6 @@ export default function Form() {
           />
           <span className="text-gray-400 text-s">
             {errors.email?.message}
-          </span>
-
-          <Checkbox
-            label="Accept terms and services"
-            {...register("terms")}
-          />
-           <span className="text-gray-400 text-s">
-            {errors.terms?.message}
           </span>
 
           <Button />

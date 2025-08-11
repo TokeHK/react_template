@@ -12,8 +12,8 @@ const Login: React.FC = () => {
   const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    /* lav admincheck med API */
-    const isAdmin = email === "testing@gmail.com";
+    /* lav admincheck med server */
+    const isAdmin = email === "testing@gmail.com"; /* adminEmail */
 
     login({ email: 'testing@gmail.com', password:"12345", isAdmin });
     navigate('/admin/admindashboard');

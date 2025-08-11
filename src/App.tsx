@@ -32,7 +32,7 @@ export default function App() {
           </Route>
           {/* regular route end */}
           {/* admin route start */}
-          <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
+          <Route path="/admin" element={<ProtectedRoute adminOnly={true}><AdminLayout /></ProtectedRoute>}>
             <Route path="admindashboard" element={<AdminDashboard />} />
             <Route path="adminpage" element={<AdminPage />} />
           </Route>

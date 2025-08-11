@@ -7,6 +7,7 @@ import LoadingSpinner from "../components/LoadingSpinner"
 import { Dropdown } from "../components/DropdownClickOutside";
 import { Modal } from "../components/ModalClickOutside";
 import { useState } from "react";
+import HTitle from "../components/textComponents/HTitle";
 
 export default function Hooks() {
 
@@ -19,7 +20,8 @@ export default function Hooks() {
 
   return (
     <div className="mx-2">
-      <LoadingSpinner />
+      <HTitle text="Hooks" />
+      <LoadingSpinner bg=""/* hex code or red, green etc. */ spinColor=""/* tailwind text-color-number */ />
       <Dropdown button={<p>button click outside to close</p>} children={
         <>
           <p>asdf</p>
