@@ -21,7 +21,7 @@ export default function Hooks() {
   return (
     <div className="mx-2">
       <HTitle text="Hooks" />
-      <LoadingSpinner bg=""/* hex code or red, green etc. */ spinColor=""/* tailwind text-color-number */ />
+      <LoadingSpinner bg="lightgray"/* hex code or red, green etc. */ spinColor=""/* tailwind text-green-600 */ />
       <Dropdown button={<p>button click outside to close</p>} children={
         <>
           <p>asdf</p>

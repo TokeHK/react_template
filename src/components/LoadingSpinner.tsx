@@ -9,7 +9,7 @@ const Spinner: React.FC<SpinnerColor> = ({spinColor, bg}) => {
     <div role="status" className="absolute right-1/2 top-1/5 translate-x-1/2">
       <svg
         aria-hidden="true"
-        className={`w-12 h-12 animate-spin mx-auto ${spinColor ? `${spinColor}` : 'text-blue-600'}`}
+        className={`w-16 h-16 animate-spin mx-auto ${spinColor ? `${spinColor}` : 'text-blue-600'}`}
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
