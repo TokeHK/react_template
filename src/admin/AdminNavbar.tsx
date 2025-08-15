@@ -18,14 +18,9 @@ export default function AdminNavbar({ links }: AdminNavbarProps) {
   const navigate = useNavigate();
 
   const navLink = (to: string, label: string) => (
-    <Link
-      key={to}
-      to={to}
+    <Link key={to} to={to}
       className={`px-3 py-2 rounded hover:bg-green-100 transition ${
-        pathname === to
-          ? "text-green-700 font-semibold border-2"
-          : "text-gray-700"
-      }`}
+      pathname === to ? "text-green-700 font-semibold border-2" : "text-gray-700"}`}
     >
       {label}
     </Link>

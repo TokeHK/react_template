@@ -1,9 +1,9 @@
-import React, { type ReactElement } from "react";
+import React from "react";
 
 export interface AppRoute {
   link: string;        // URL ("" for index route / home page)
   title: string;       // link titel i navbars
-  component: ReactElement; // Page component
+  component: React.ReactElement; // "pages"
   showInNavbar?: boolean;  // false hvis den ikke skal vises i navbar
 }
 
