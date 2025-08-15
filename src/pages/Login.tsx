@@ -15,7 +15,7 @@ const Login: React.FC = () => {
     /* lav admincheck med server */
     const isAdmin = email === "testing@gmail.com"; /* adminEmail */
 
-    login({ email: 'testing@gmail.com', password:"12345", isAdmin });
+    login({ email: 'testing@gmail.com', password:"12345", isAdmin/* :false */ });
     navigate('/admin/admindashboard');
   };
 

@@ -1,13 +1,25 @@
-import { Link, useLocation } from 'react-router';
+import { Link, useLocation } from "react-router";
+import { type AppRoute } from "../../routesConfig";
 
-export default function Navbar() {
+interface NavbarProps {
+  links: AppRoute[];
+}
+
+/* 
+
+Gå til RoutesConfig.tsx for at lave flere routes
+
+*/
+
+export default function Navbar({ links }: NavbarProps) {
   const { pathname } = useLocation();
 
   const navLink = (to: string, label: string) => (
     <Link
+      key={to}
       to={to}
       className={`px-3 py-2 rounded hover:bg-blue-100 transition ${
-        pathname === to ? 'text-blue-600 font-semibold border-2' : 'text-gray-700'
+        pathname === to ? "text-blue-600 font-semibold border-2" : "text-gray-700"
       }`}
     >
       {label}
@@ -15,13 +27,12 @@ export default function Navbar() {
   );
 
   return (
-    /* Skal også lave link i App.tsx */
     <nav className="bg-white shadow p-4 flex gap-4">
-      {navLink('/', 'Home')}
-      {navLink('/about', 'About')}
-      {navLink('/hooks', 'Hooks')}
-      {navLink('/form', 'Form')}
-      {navLink('/login', 'Login')}
+      {links
+        .filter((link) => link.showInNavbar !== false && link.link !== "*")
+        .map((link) =>
+          navLink(link.link === "" ? "/" : `/${link.link}`, link.title)
+        )}
     </nav>
   );
 }

@@ -1,10 +1,15 @@
-import { Outlet } from 'react-router';
-import AdminNavbar from './AdminNavbar';
+import { Outlet } from "react-router";
+import AdminNavbar from "./AdminNavbar";
+import { type AppRoute } from "../../routesConfig";
 
-const AdminLayout = () => {
+interface AdminLayoutProps {
+  links: AppRoute[];
+}
+
+const AdminLayout = ({ links }: AdminLayoutProps) => {
   return (
     <div>
-      <AdminNavbar />
+      <AdminNavbar links={links} />
       <Outlet />
     </div>
   );
