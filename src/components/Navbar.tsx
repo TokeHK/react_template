@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router";
-import { type AppRoute } from "../../routesConfig";
+import { type AppRoute } from "../../RoutesConfig";
 
 interface NavbarProps {
   links: AppRoute[];

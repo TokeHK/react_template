@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { type AppRoute } from "../../routesConfig";
+import { type AppRoute } from "../../RoutesConfig";
 
 interface LayoutProps {
   links: AppRoute[];

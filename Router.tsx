@@ -6,8 +6,7 @@ import { AuthProvider } from './src/admin/AuthContext';
 import ProtectedRoute from './src/admin/ProtectedRoute';
 import AdminLayout from './src/admin/AdminLayout';
 
-import { publicRoutes, adminRoutes } from "./routesConfig";
-
+import { publicRoutes, adminRoutes } from './RoutesConfig';
 /* 
 
 Gå til RoutesConfig.tsx for at lave flere routes
@@ -31,20 +30,13 @@ export default function Router() {
           </Route>
 
           {/* Protected admin routes */}
-          <Route
-            path="/admin"
-            element={
-              <ProtectedRoute adminOnly>
-                <AdminLayout links={adminRoutes} />
-              </ProtectedRoute>
-            }
+          <Route path="/admin" element={
+            <ProtectedRoute adminOnly>
+              <AdminLayout links={adminRoutes} />
+            </ProtectedRoute>}
           >
             {adminRoutes.map((route) => (
-              <Route
-                path={route.link}
-                element={route.component}
-                key={route.link}
-              />
+              <Route path={route.link} element={route.component} key={route.link} />
             ))}
           </Route>
         </Routes>

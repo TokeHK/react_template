@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router";
 import { useAuth } from "./AuthContext";
-import { type AppRoute } from "../../routesConfig";
+import { type AppRoute } from "../../RoutesConfig";
 
 interface AdminNavbarProps {
   links: AppRoute[];

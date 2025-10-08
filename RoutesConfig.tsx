@@ -16,10 +16,6 @@ import Login from "./src/pages/Login";
 import Unauthorized from "./src/pages/Unauthorized";
 import NotFound from "./src/pages/NotFound";
 
-// Admin pages
-import AdminDashboard from "./src/admin/AdminDashboard";
-import AdminPage from "./src/admin/AdminPage";
-
 // Public routes
 export const publicRoutes: AppRoute[] = [
   { link: "", title: "Home", component: <Home /> },
@@ -30,6 +26,10 @@ export const publicRoutes: AppRoute[] = [
   { link: "unauthorized", title: "Unauthorized", component: <Unauthorized />, showInNavbar: false },
   { link: "*", title: "NotFound", component: <NotFound />, showInNavbar: false },
 ];
+
+// Admin pages
+import AdminDashboard from "./src/admin/AdminDashboard";
+import AdminPage from "./src/admin/AdminPage";
 
 // Admin routes
 export const adminRoutes: AppRoute[] = [
