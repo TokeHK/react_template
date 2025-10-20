@@ -12,6 +12,12 @@ interface AuthContextType {
   logout: () => void;
 }
 
+/* 
+
+  Se proeve_eksamen for en opdateret version der checker login på server
+
+*/
+
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {

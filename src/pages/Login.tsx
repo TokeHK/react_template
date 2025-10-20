@@ -16,7 +16,7 @@ const Login: React.FC = () => {
     const isAdmin = email === "testing@gmail.com"; /* adminEmail */
 
     login({ email: 'testing@gmail.com', password:"12345", isAdmin/* :false */ });
-    navigate('/admin/admindashboard');
+    navigate('/admin/dashboard');
   };
 
   return (
