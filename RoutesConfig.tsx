@@ -33,6 +33,6 @@ import AdminPage from "./src/admin/AdminPage";
 
 // Admin routes
 export const adminRoutes: AppRoute[] = [
-  { link: "admindashboard", title: "Dashboard", component: <AdminDashboard /> },
-  { link: "adminpage", title: "Page", component: <AdminPage /> },
+  { link: "dashboard", title: "Dashboard", component: <AdminDashboard /> },
+  { link: "page", title: "Page", component: <AdminPage /> },
 ];

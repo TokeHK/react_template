@@ -14,7 +14,7 @@ export const Dropdown: React.FC<DropdownProps> = ({ button, children }) => {
   useOnClickOutside(ref, () => setIsOpen(false));
 
   return (
-    <div ref={ref} style={{ position: "relative", display: "inline-block" }}>
+    <div ref={ref} className="relative inline-block">
       <button
         className="p-2 border"
         onClick={() => setIsOpen((prev) => !prev)}
