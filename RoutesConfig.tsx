@@ -28,8 +28,8 @@ export const publicRoutes: AppRoute[] = [
 ];
 
 // Admin pages
-import AdminDashboard from "./src/admin/AdminDashboard";
-import AdminPage from "./src/admin/AdminPage";
+import AdminDashboard from "./src/admin/Pages/AdminDashboard";
+import AdminPage from "./src/admin/Pages/AdminPage";
 
 // Admin routes
 export const adminRoutes: AppRoute[] = [
